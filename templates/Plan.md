@@ -9,6 +9,15 @@
 - Status: go | needs decision | stop
 - Why:
 
+## Oversight Plan
+
+- Mode:
+- Required lenses:
+- Optional lenses skipped:
+- Required gates:
+- Evidence needed:
+- Pivot triggers:
+
 ## Milestones
 
 ### Milestone 1

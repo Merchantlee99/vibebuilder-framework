@@ -257,6 +257,11 @@ flowchart LR
 - [.agents/skills/gstack-gates/SKILL.md](./.agents/skills/gstack-gates/SKILL.md): review, QA, security, ship 게이트
 - [templates](./templates): Prompt, PRD, Plan, Implement, Documentation, Manifest 템플릿
 - [docs](./docs): 운영 모델, artifact gate, subagent 정책, mode, oversight, pivot 정책, 레퍼런스 해석
+- [examples](./examples): 실제로 채워진 샘플 프로젝트 문서 세트
+
+## 예시
+
+- [examples/landing-page-redesign](./examples/landing-page-redesign): `solo-pro` mode로 planner, oversight, scope freeze, review, QA까지 한 번 보여주는 샘플
 
 ## 레퍼런스와 해석
 
