@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vibe Workflow"
+  short_description: "Run implementation with scope and validation"
+  default_prompt: "Use $vibe-coding-workflow to implement this scoped feature with one writer, clear write paths, validation slices, and document updates."
+
+policy:
+  allow_implicit_invocation: true

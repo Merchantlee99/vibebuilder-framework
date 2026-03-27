@@ -1,0 +1,7 @@
+interface:
+  display_name: "Product Planner"
+  short_description: "Turn rough ideas into build-ready plans"
+  default_prompt: "Use $product-planner to turn this rough request into a scoped prompt, PRD, plan, and readiness decision before implementation."
+
+policy:
+  allow_implicit_invocation: true

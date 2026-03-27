@@ -1,0 +1,7 @@
+interface:
+  display_name: "gstack Gates"
+  short_description: "Lock quality with review, QA, and ship gates"
+  default_prompt: "Use $gstack-gates to run the right post-implementation gates for this change and report pass, warn, or block with concrete findings."
+
+policy:
+  allow_implicit_invocation: true
