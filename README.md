@@ -1,8 +1,8 @@
 # vibebuilder-framework
 
-vibebuilder-framework는 에이전트 기반 제품 개발을 더 일관되고 안전하게 진행하기 위한 프로급 바이브코딩 프레임워크입니다.
+vibebuilder-framework는 PM-first planning, single-writer execution, dynamic oversight, and gated review를 중심으로 에이전트 기반 제품 개발을 운영하는 바이브코딩 프레임워크입니다.
 
-짧게 말하면 이 저장소는 "에이전트를 많이 쓰는 법"이 아니라 "언제 누구를 쓰고, 무엇을 파일로 남기고, 어떤 순서로 검증할지"를 정리한 작업 시스템입니다.
+짧게 말하면 이 저장소는 "에이전트를 많이 쓰는 법"이 아니라 "언제 기획을 잠그고, 누가 구현을 맡고, 어떤 기준으로 검증할지"를 정리한 실전용 개발 프레임워크입니다.
 
 ## 왜 이 저장소를 만들었나
 
