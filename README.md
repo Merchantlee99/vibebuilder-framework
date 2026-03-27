@@ -152,3 +152,8 @@ flowchart LR
 ## 한 문장 요약
 
 vibebuilder-os는 PM planner로 방향을 고정하고, 메인 writer가 구현하고, gstack 스타일 게이트로 품질을 잠그는 프로급 바이브코딩 운영체계입니다.
+
+## 참고
+
+https://github.com/garrytan/gstack
+https://github.com/phuryn/pm-skills
