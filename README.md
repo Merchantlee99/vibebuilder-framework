@@ -76,6 +76,66 @@ flowchart TD
 7. [docs/OVERSIGHT_POLICY.md](./docs/OVERSIGHT_POLICY.md)에서 이번 작업의 감독 계획을 정한다.
 8. [docs/PIVOT_POLICY.md](./docs/PIVOT_POLICY.md)에서 구현 중 변경을 어떻게 처리할지 확인한다.
 
+## 새 프로젝트에 어떻게 적용하나
+
+이 프레임워크는 별도 참고용 폴더로 옆에 두는 방식보다, 새 프로젝트의 `root`에 같이 넣고 시작하는 방식이 가장 좋다.
+
+예를 들어 새 프로젝트가 `my-app`이라면 구조는 이렇게 된다.
+
+```text
+my-app/
+  AGENTS.md
+  .agents/skills/...
+  docs/...
+  templates/...
+  Prompt.md
+  PRD.md
+  Plan.md
+  Implement.md
+  Documentation.md
+  src/...
+  package.json
+```
+
+즉, 코드와 문서와 agent 규칙이 같은 프로젝트 폴더 안에 같이 있어야 한다.
+
+이 방식을 권장하는 이유는 단순하다.
+
+- agent가 프로젝트를 열자마자 `AGENTS.md`와 `.agents/skills`를 바로 읽을 수 있다.
+- 코드와 계획 문서가 같은 레포에 있어서 맥락이 끊기지 않는다.
+- 작업 규칙, 기획, 구현, 검증 기록이 한곳에 모인다.
+
+반대로 아래처럼 프레임워크를 옆 폴더에 따로 두는 방식은 비추천이다.
+
+```text
+workspace/
+  vibebuilder-framework/
+  my-app/
+```
+
+이렇게 두면 규칙은 한 폴더에 있고 실제 코드는 다른 폴더에 있어서, 프로젝트가 길어질수록 오히려 관리가 불편해진다.
+
+## 5분 안에 시작하는 절차
+
+새 프로젝트를 시작할 때는 아래처럼 하면 된다.
+
+1. 새 프로젝트 폴더를 만든다.
+2. 이 프레임워크의 `AGENTS.md`, `.agents/skills`, `docs`, `templates`를 그 프로젝트 `root`에 복사한다.
+3. `templates/Prompt.md`, `templates/PRD.md`, `templates/Plan.md`, `templates/Implement.md`, `templates/Documentation.md`를 프로젝트 root에 실제 작업 파일로 복사한다.
+4. [docs/MODES.md](./docs/MODES.md)를 보고 이번 작업의 mode를 고른다. 확신이 없으면 `solo-pro`로 시작한다.
+5. `product-planner`로 첫 기획을 정리하면서 `Prompt.md`, `PRD.md`, `Plan.md`를 채운다.
+6. [docs/OVERSIGHT_POLICY.md](./docs/OVERSIGHT_POLICY.md)에 따라 이번 작업의 oversight plan을 선언한다.
+7. `scope freeze` 후 `Implement.md`의 sprint contract를 채우고 구현을 시작한다.
+8. 구현이 끝나면 `review`, `qa/browse`, `security if needed`, `ship` 순서로 게이트를 통과시킨다.
+
+정말 짧게 줄이면 이렇다.
+
+- 프레임워크 파일을 프로젝트 root에 넣는다
+- 템플릿을 실제 작업 문서로 복사한다
+- planner로 기획을 고정한다
+- sprint contract를 적고 구현한다
+- review와 QA를 거쳐 마무리한다
+
 ## 왜 이 구성이 좋은가
 
 ### 1. 처음부터 코드를 치지 않게 막아준다
