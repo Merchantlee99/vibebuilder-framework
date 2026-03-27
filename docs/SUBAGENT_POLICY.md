@@ -1,6 +1,6 @@
 # Subagent Policy
 
-vibebuilder-os에서 subagent는 상시 조직이 아니라, 필요한 순간에만 호출하는 전문가다.
+vibebuilder-framework에서 subagent는 상시 조직이 아니라, 필요한 순간에만 호출하는 전문가다.
 
 ## 기본 정책
 

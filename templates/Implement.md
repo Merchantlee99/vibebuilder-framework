@@ -16,6 +16,15 @@
 
 - 
 
+## Sprint Contract
+
+- Outcome:
+- Done definition:
+- Evidence to collect:
+- Failure threshold:
+- Required gate after this slice:
+- Pivot trigger:
+
 ## Validation Loop
 
 1. 

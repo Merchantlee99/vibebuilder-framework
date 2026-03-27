@@ -1,6 +1,6 @@
 # Reference Alignment
 
-이 문서는 vibebuilder-os가 어떤 레퍼런스를 어떻게 해석해 사용하고 있는지 정리한다.
+이 문서는 vibebuilder-framework가 어떤 레퍼런스를 어떻게 해석해 사용하고 있는지 정리한다.
 
 ## 참고 레퍼런스
 
@@ -10,7 +10,7 @@
 
 ## 레퍼런스별 반영 방식
 
-| 레퍼런스 | 가져온 핵심 | vibebuilder-os에서 반영한 위치 | 그대로 복제하지 않은 이유 |
+| 레퍼런스 | 가져온 핵심 | vibebuilder-framework에서 반영한 위치 | 그대로 복제하지 않은 이유 |
 | --- | --- | --- | --- |
 | `pm-skills` | discovery, assumption mapping, PRD/execution 구조화 | `product-planner`, `templates/PRD.md`, `templates/Plan.md` | 전체 마켓플레이스를 들이는 대신 planner 핵심 절차만 가져오기 위해 |
 | `gstack` | office-hours식 재정의, CEO/eng/design review, review/qa/browse/ship 게이트 | `product-planner`, `gstack-gates`, `docs/ARTIFACT_GATES.md` | 상시 오케스트레이션보다 단계별 게이트로 쓰는 것이 더 안정적이기 때문 |
@@ -18,7 +18,7 @@
 
 ## 현재 해석
 
-vibebuilder-os는 레퍼런스를 이렇게 나눠 쓴다.
+vibebuilder-framework는 레퍼런스를 이렇게 나눠 쓴다.
 
 - `agents.md`는 규칙의 위치를 정한다.
 - `pm-skills`는 기획자의 사고 절차를 제공한다.
@@ -37,4 +37,4 @@ vibebuilder-os는 레퍼런스를 이렇게 나눠 쓴다.
 - 구현 후 review, QA, security, ship 게이트가 존재한다.
 - 장기 맥락은 프로젝트 문서에 남는다.
 
-이 체크포인트 중 빠진 것이 있으면, vibebuilder-os의 핵심 설계가 무너진 것으로 본다.
+이 체크포인트 중 빠진 것이 있으면, vibebuilder-framework의 핵심 설계가 무너진 것으로 본다.

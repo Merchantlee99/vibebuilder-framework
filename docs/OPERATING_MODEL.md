@@ -1,10 +1,12 @@
 # Operating Model
 
-vibebuilder-os는 에이전트를 많이 붙이는 시스템이 아니다. 역할과 타이밍을 분리해, 각 단계의 판단을 더 쉽게 만드는 시스템이다.
+vibebuilder-framework는 에이전트를 많이 붙이는 시스템이 아니다. 역할과 타이밍을 분리해, 각 단계의 판단을 더 쉽게 만드는 프레임워크다.
 
 ## 한 줄 정의
 
 `PM-first planning -> single-writer execution -> gated review`
+
+운영 강도는 `mode`로 조절하고, 평가 강도는 `oversight plan`으로 조절한다.
 
 ## 왜 이렇게 나누는가
 
@@ -43,6 +45,9 @@ flowchart TD
 - 구현이 시작되면 범위를 지킨다.
 - 검토는 끝에서 강하게 한다.
 - 기억은 파일에 남긴다.
+- mode는 작업 크기와 리스크에 맞춘다.
+- 감독 렌즈는 작업마다 planner가 동적으로 고른다.
+- 구현 중 인사이트는 pivot 정책에 따라 흡수하거나 재계획한다.
 
 ## 예외 처리
 
