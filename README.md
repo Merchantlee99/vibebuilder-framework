@@ -136,6 +136,45 @@ workspace/
 - sprint contract를 적고 구현한다
 - review와 QA를 거쳐 마무리한다
 
+## Bootstrap 복사 대상
+
+새 프로젝트에 넣을 때는 아래처럼 생각하면 된다.
+
+### 그대로 복사할 것
+
+- `AGENTS.md`
+- `.agents/skills/`
+- `docs/`
+- `templates/`
+
+### 실제 작업 파일로 새로 만들 것
+
+- `Prompt.md`
+- `PRD.md`
+- `Plan.md`
+- `Implement.md`
+- `Documentation.md`
+
+이 파일들은 `templates/`에서 복사해서 프로젝트 root에 둔다.
+
+### 필요할 때만 만들 것
+
+- `Subagent-Manifest.md`
+
+병렬 역할이 없거나 solo-lite 작업이면 처음부터 만들 필요는 없다.
+
+## 새 프로젝트 시작 체크리스트
+
+아래 항목이 끝났으면 바로 첫 구현으로 들어가도 된다.
+
+- 프로젝트 root에 `AGENTS.md`, `.agents/skills`, `docs`, `templates`가 있다
+- `Prompt.md`, `PRD.md`, `Plan.md`, `Implement.md`, `Documentation.md`를 만들었다
+- 이번 작업의 `mode`를 골랐다
+- planner가 `oversight plan`을 선언했다
+- `Prompt.md`, `PRD.md`, `Plan.md`가 채워졌다
+- `scope freeze` 전에 남은 큰 결정이 없다
+- `Implement.md`의 sprint contract를 적었다
+
 ## 왜 이 구성이 좋은가
 
 ### 1. 처음부터 코드를 치지 않게 막아준다
