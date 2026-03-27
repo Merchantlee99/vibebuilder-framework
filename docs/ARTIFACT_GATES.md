@@ -15,6 +15,17 @@
 
 ## 단계별 게이트
 
+### Gate 0: Problem Framing
+
+기획 초기 확인한다.
+
+- 기능 요청이 아니라 사용자 문제로 다시 썼는가
+- 지금 pain과 기존 대안이 정리되었는가
+- 이번 라운드의 가장 좁은 wedge가 보이는가
+- 핵심 가정이 분리되었는가
+
+이 단계는 `product-planner`가 맡는다.
+
 ### Gate 1: Readiness
 
 구현 시작 전 확인한다.
@@ -30,7 +41,15 @@
 - `needs decision`: 구현 전 결정 필요
 - `stop`: 문제 정의를 다시 해야 함
 
-### Gate 2: Scope Freeze
+### Gate 2: Plan Review
+
+scope freeze 전 확인한다.
+
+- founder lens에서 범위가 과하지 않은가
+- engineering lens에서 실패 경로와 검증 계획이 보이는가
+- UI가 중요하면 design lens에서 핵심 상호작용이 정리되었는가
+
+### Gate 3: Scope Freeze
 
 구현 직전 확인한다.
 
@@ -38,19 +57,19 @@
 - 메인 writer가 누구인지 정해졌는가
 - 병렬 작업이 있다면 write scope가 분리되었는가
 
-### Gate 3: Review
+### Gate 4: Review
 
 - 계획 대비 구현 누락이 없는가
 - 버그와 회귀 가능성이 없는가
 - 테스트 공백이 없는가
 
-### Gate 4: QA / Browse
+### Gate 5: QA / Browse
 
 - 주요 사용자 플로우를 실제로 재현했는가
 - 오류 상태와 edge case를 확인했는가
 - UI나 폼 동작이 의도대로 보이는가
 
-### Gate 5: Security
+### Gate 6: Security
 
 아래 중 하나라도 해당하면 수행한다.
 
@@ -61,7 +80,7 @@
 - 사용자 데이터 저장 또는 노출
 - 비밀 값과 토큰 처리
 
-### Gate 6: Ship
+### Gate 7: Ship
 
 - 테스트와 검증이 끝났는가
 - 문서가 최신인가
@@ -73,3 +92,4 @@
 - 게이트는 체크박스 장식이 아니다.
 - 게이트를 건너뛰면 이유를 `Documentation.md`에 남긴다.
 - 게이트는 대화 단위가 아니라 산출물 단위로 실행한다.
+- `Problem Framing -> Readiness -> Plan Review -> Scope Freeze`가 초기 기획 품질을 결정한다.

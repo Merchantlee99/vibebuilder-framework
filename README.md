@@ -47,7 +47,7 @@ flowchart TD
 
     N["AGENTS.md<br/>항상 켜진 헌법"] --- B
     N --- H
-    O["SKILL.md<br/>반복 가능한 운영 절차"] --- B
+    O["Skills<br/>반복 가능한 운영 절차"] --- B
     O --- I
     P["Subagent-Manifest.md<br/>이번 프로젝트 인력 배치표"] --- H
 ```
@@ -107,7 +107,7 @@ planner나 reviewer가 매 대화 턴마다 들어오면 흐름이 끊깁니다.
 ```mermaid
 flowchart LR
     A["AGENTS.md"] --> B["항상 적용되는 규칙"]
-    C["SKILL.md"] --> D["반복 가능한 절차"]
+    C["Skills"] --> D["반복 가능한 절차"]
     E["Project Docs"] --> F["장기 기억과 상태 기록"]
     G["Subagents"] --> H["필요할 때만 부르는 전문가"]
 ```
@@ -155,13 +155,18 @@ flowchart LR
 - [.agents/skills/vibe-coding-workflow/SKILL.md](./.agents/skills/vibe-coding-workflow/SKILL.md): single-writer 구현 루프
 - [.agents/skills/gstack-gates/SKILL.md](./.agents/skills/gstack-gates/SKILL.md): review, QA, security, ship 게이트
 - [templates](./templates): Prompt, PRD, Plan, Implement, Documentation, Manifest 템플릿
-- [docs](./docs): 운영 모델, artifact gate, subagent 정책
+- [docs](./docs): 운영 모델, artifact gate, subagent 정책, 레퍼런스 해석
+
+## 레퍼런스와 해석
+
+이 저장소는 아래 레퍼런스를 그대로 포크하지 않고, 각 레포가 가장 잘하는 부분만 가져와 재구성합니다.
+
+- [phuryn/pm-skills](https://github.com/phuryn/pm-skills): discovery, assumption mapping, PRD와 execution 구조화
+- [garrytan/gstack](https://github.com/garrytan/gstack): office-hours식 문제 재정의, CEO/eng/design review, review/qa/browse/ship 게이트
+- [agentsmd/agents.md](https://github.com/agentsmd/agents.md): 예측 가능한 전역 agent 지시 파일 패턴
+
+이 레퍼런스를 어떻게 해석했는지는 [docs/REFERENCE_ALIGNMENT.md](./docs/REFERENCE_ALIGNMENT.md)에 정리해두었습니다.
 
 ## 한 문장 요약
 
 vibebuilder-os는 PM planner로 방향을 고정하고, 메인 writer가 구현하고, gstack 스타일 게이트로 품질을 잠그는 프로급 바이브코딩 운영체계입니다.
-
-## 참고
-
-https://github.com/garrytan/gstack
-https://github.com/phuryn/pm-skills

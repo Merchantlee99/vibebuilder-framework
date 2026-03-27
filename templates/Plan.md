@@ -4,6 +4,11 @@
 
 -
 
+## Readiness Decision
+
+- Status: go | needs decision | stop
+- Why:
+
 ## Milestones
 
 ### Milestone 1
@@ -21,6 +26,12 @@
 ## Dependencies
 
 - 
+
+## Plan Review
+
+- Founder lens:
+- Engineering lens:
+- Design lens if needed:
 
 ## Risk Register
 

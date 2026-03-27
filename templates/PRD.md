@@ -4,6 +4,12 @@
 
 -
 
+## User Pain And Current Workaround
+
+- Pain:
+- Current workaround:
+- Why now:
+
 ## Target User
 
 -
@@ -26,7 +32,16 @@
 
 - 
 
+## Options Considered
+
+- Option:
+  Why not chosen:
+
 ## Acceptance Criteria
+
+- 
+
+## Key Assumptions
 
 - 
 
