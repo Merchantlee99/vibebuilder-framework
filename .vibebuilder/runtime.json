@@ -1,0 +1,38 @@
+{
+  "mode": "solo-pro",
+  "planner_of_record": "codex-product-planner",
+  "task_type": "framework_bootstrap",
+  "docs": {
+    "prompt": false,
+    "prd": false,
+    "plan": false,
+    "implement": false,
+    "documentation": false,
+    "subagent_manifest": false
+  },
+  "planning": {
+    "readiness": "needs_decision",
+    "scope_freeze": false,
+    "required_gates": [
+      "review",
+      "validation"
+    ],
+    "security_needed": false,
+    "release_bound": false
+  },
+  "execution": {
+    "current_slice": "bootstrap hooks pilot",
+    "writer": "codex",
+    "write_paths": [
+      ".codex",
+      ".vibebuilder",
+      "docs",
+      "README.md"
+    ],
+    "review_done": false,
+    "validation_done": false,
+    "qa_done": false,
+    "security_done": false,
+    "ship_done": false
+  }
+}

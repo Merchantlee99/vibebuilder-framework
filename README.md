@@ -158,6 +158,10 @@ flowchart LR
 각 레이어의 역할은 아래와 같습니다.
 
 - [AGENTS.md](./AGENTS.md): 언어, 협업 방식, one-writer 원칙, 필수 게이트 같은 헌법
+- [.codex/config.toml](./.codex/config.toml): repo-local hooks 기능 활성화
+- [.codex/hooks.json](./.codex/hooks.json): SessionStart / Stop hook 연결
+- [.codex/hooks/](./.codex/hooks): 현재 시범 구현된 hook 스크립트
+- [.vibebuilder/runtime.json](./.vibebuilder/runtime.json): hooks가 읽는 최소 control plane 상태
 - [.agents/skills/](./.agents/skills): planner, implementation, review, debugging 같은 반복 절차
 - [templates](./templates): 새 프로젝트를 시작할 때 쓰는 문서 출발점
 - [docs](./docs): mode, oversight, pivot, gate, tool mapping 같은 운영 원리
@@ -239,6 +243,11 @@ flowchart LR
 ## 현재 저장소 구조
 
 - [AGENTS.md](./AGENTS.md): 저장소 전체 운영 헌법
+- [.codex/config.toml](./.codex/config.toml): hooks 기능 플래그
+- [.codex/hooks.json](./.codex/hooks.json): repo-local hooks 등록 파일
+- [.codex/hooks/session_start.py](./.codex/hooks/session_start.py): 세션 시작 시 runtime 요약 주입
+- [.codex/hooks/stop.py](./.codex/hooks/stop.py): 종료 직전 문서 동기화 경고
+- [.vibebuilder/runtime.json](./.vibebuilder/runtime.json): hooks가 읽는 최소 상태 파일
 - [.agents/skills/product-planner/SKILL.md](./.agents/skills/product-planner/SKILL.md): PM-first 기획 정리
 - [.agents/skills/vibe-coding-workflow/SKILL.md](./.agents/skills/vibe-coding-workflow/SKILL.md): single-writer 구현 루프
 - [.agents/skills/gstack-gates/SKILL.md](./.agents/skills/gstack-gates/SKILL.md): review, validation, QA, security, ship 게이트
