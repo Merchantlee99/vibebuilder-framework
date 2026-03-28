@@ -45,7 +45,7 @@ vibebuilder-framework는 레퍼런스를 이렇게 나눠 쓴다.
 - planner는 problem framing과 assumption prioritization을 수행한다.
 - scope freeze 전에는 큰 구현을 시작하지 않는다.
 - 구현은 single writer가 맡는다.
-- 구현 후 review, QA, security, ship 게이트가 존재한다.
+- 구현 후 review, validation 또는 QA, security, ship 게이트가 존재한다.
 - 장기 맥락은 프로젝트 문서에 남는다.
 
 이 체크포인트 중 빠진 것이 있으면, vibebuilder-framework의 핵심 설계가 무너진 것으로 본다.

@@ -46,5 +46,5 @@
 이 slice 다음에 반드시 태울 게이트를 표시한다.
 
 - review
-- qa or browse
+- validation or qa or browse
 - cso if needed

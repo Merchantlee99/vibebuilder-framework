@@ -7,6 +7,7 @@
 - `planner-capable agent`: 문제 정의, 대안 비교, 범위 통제
 - `writer-capable agent`: 저장소 맥락 기반 구현, 수정, 검증
 - `review-capable agent`: 회귀, 누락, 리스크 점검
+- `validation-capable agent`: 테스트, API, CLI, runtime check 수행
 - `browser-capable agent`: 실제 UI 플로우 재현
 
 ## 기본 원칙
@@ -20,11 +21,25 @@
 
 혼자 제품을 만드는 빌더라면 아래 구성이 가장 무난하다.
 
-- `Codex app`: 기본 writer, project-local docs 갱신, review/qa 실행
+- `Codex app`: 기본 writer, project-local docs 갱신, review/validation/qa 실행
 - `ChatGPT`: 초기 아이디어 확장, 대안 비교, 전략적 비교 토론
 - `다른 도구`: 정말 특정 강점이 필요할 때만 보조로 사용
 
 즉, 기본 스택은 `ChatGPT로 발산 -> Codex로 수렴과 실행`이다.
+
+## Planner-Of-Record
+
+외부 도구와 대화를 많이 하더라도, 실제 프로젝트 기준 문서를 쓰고 갱신하는 planner는 하나로 고정하는 편이 좋다.
+
+- `exploration partner`: 아이디어를 넓히는 대화 상대
+- `planner-of-record`: `Prompt.md`, `PRD.md`, `Plan.md`를 실제 기준 문서로 남기는 주체
+
+권장 기본값:
+
+- 발산: ChatGPT 또는 Claude Code
+- 문서 확정: Codex의 `product-planner`
+
+즉, 다른 도구와 대화해도 마지막에는 repo 안 문서로 수렴해야 한다.
 
 ## Setup 1: Codex-only
 
@@ -32,7 +47,7 @@
 
 - `product-planner`: Codex에서 실행
 - `main writer`: Codex
-- `review`, `qa`, `browse`: Codex 안의 별도 턴 또는 별도 역할로 실행
+- `review`, `validation`, `qa`, `browse`: Codex 안의 별도 턴 또는 별도 역할로 실행
 
 이 setup이 맞는 경우:
 
@@ -50,9 +65,9 @@
 혼자 바이브코딩하는 사람에게 가장 권장하는 방식이다.
 
 - `ChatGPT`: 초기 문제 재정의, 옵션 비교, wedge 탐색
-- `Codex product-planner`: 실제 프로젝트 문서로 수렴
+- `Codex product-planner`: planner-of-record로서 실제 프로젝트 문서로 수렴
 - `Codex main writer`: 구현과 검증
-- `Codex gstack-gates`: review, qa, ship
+- `Codex gstack-gates`: review, validation 또는 qa/browse, ship
 
 이 setup이 맞는 경우:
 
@@ -64,6 +79,7 @@
 
 - 최종 truth는 항상 프로젝트 문서에 남긴다
 - ChatGPT 대화 내용이 아니라 `Prompt.md`, `PRD.md`, `Plan.md`가 구현 기준이다
+- ChatGPT는 exploration partner일 수 있지만 planner-of-record를 대체하지 않는다
 
 ## Setup 3: Claude Code + Codex
 
@@ -89,9 +105,10 @@
 
 | 역할 | 가장 중요한 능력 | 기본 추천 |
 | --- | --- | --- |
-| `product-planner` | 문제 재정의, 가정 분리, 범위 통제 | ChatGPT 또는 Codex |
+| `product-planner` | 문제 재정의, 가정 분리, 범위 통제 | Codex planner-of-record |
 | `main writer` | 저장소 맥락 이해, 구현, 검증 | Codex |
 | `reviewer` | 회귀, 누락, completeness gap 발견 | Codex 또는 Claude Code |
+| `validation` | 테스트, API, CLI, runtime check | Codex |
 | `qa/browser` | 실제 흐름 재현 | Codex with browser-capable flow |
 | `security` | 민감 표면 점검 | 가장 보수적으로 보는 도구 |
 
@@ -107,4 +124,4 @@
 
 ## 한 줄 추천
 
-혼자 Codex app을 주로 쓴다면 기본은 `Codex as writer, planner if needed, separate review turn`으로 두고, 초기 아이디어 발산이 필요할 때만 ChatGPT를 붙이는 것이 가장 안정적이다.
+혼자 Codex app을 주로 쓴다면 기본은 `Codex as planner-of-record and writer, separate review turn`으로 두고, 초기 아이디어 발산이 필요할 때만 ChatGPT를 붙이는 것이 가장 안정적이다.

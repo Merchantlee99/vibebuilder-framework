@@ -50,7 +50,7 @@ vibebuilder-framework는 고정된 렌즈 매트릭스를 강제하지 않는다
 Mode: solo-pro
 Required lenses: discovery, pm, engineering
 Optional lenses skipped: design
-Required gates: review, qa
+Required gates: review, validation or qa
 Evidence needed: demo path, regression check
 Pivot triggers: acceptance criteria change, write path expansion
 ```

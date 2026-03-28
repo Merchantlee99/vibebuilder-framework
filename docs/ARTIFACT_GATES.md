@@ -11,7 +11,7 @@
 | `Plan.md` | milestone, 검증 순서, 의존성, 종료 조건 | 구현 순서를 설명할 수 있다 |
 | `Implement.md` | 현재 범위, write paths, validation loop | 지금 무엇을 수정하는지 분명하다 |
 | `Documentation.md` | 상태, 결정 로그, known issues, 재개 지점 | 다음 세션에서 바로 이어갈 수 있다 |
-| `Subagent-Manifest.md` | 역할, 입력, 출력, write scope | 병렬 역할이 충돌하지 않는다 |
+| `Subagent-Manifest.md` | 역할, 입력, 출력, write scope | 병렬 역할이나 delegated write가 있을 때 충돌하지 않는다 |
 
 ## 단계별 게이트
 
@@ -63,11 +63,21 @@ scope freeze 전 확인한다.
 - 버그와 회귀 가능성이 없는가
 - 테스트 공백이 없는가
 
-### Gate 5: QA / Browse
+### Gate 5: Validation / QA / Browse
 
-- 주요 사용자 플로우를 실제로 재현했는가
+- UI가 없으면 `validation`으로 충분한지 먼저 본다.
+- UI가 있으면 `qa` 또는 `browse`로 실제 흐름을 확인한다.
+
+`validation` 예시:
+
+- 테스트 실행
+- API smoke check
+- CLI 실행 확인
+- 수동 재현 절차 검증
+
+- 변경의 핵심 경로를 실제로 재현했는가
 - 오류 상태와 edge case를 확인했는가
-- UI나 폼 동작이 의도대로 보이는가
+- UI가 있으면 폼, 네비게이션, 레이아웃이 의도대로 보이는가
 
 ### Gate 6: Security
 
@@ -82,6 +92,7 @@ scope freeze 전 확인한다.
 
 ### Gate 7: Ship
 
+- merge 또는 release 대상이면 수행한다.
 - 테스트와 검증이 끝났는가
 - 문서가 최신인가
 - 데모 방법이 남아 있는가

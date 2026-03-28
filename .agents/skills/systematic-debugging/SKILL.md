@@ -21,6 +21,7 @@ description: Use when a bug is unclear, recurring, or expensive to guess at and 
 ## 먼저 읽을 것
 
 - [AGENTS.md](../../../AGENTS.md)
+- [docs/PIVOT_POLICY.md](../../../docs/PIVOT_POLICY.md)
 - [templates/Implement.md](../../../templates/Implement.md)
 - [templates/Documentation.md](../../../templates/Documentation.md)
 - `Prompt.md`, `PRD.md`, `Plan.md` if present
@@ -44,9 +45,10 @@ description: Use when a bug is unclear, recurring, or expensive to guess at and 
 4. 로그, 상태, 입력, 환경 차이를 모은다.
 5. 가능한 원인 가설을 적고 가장 싼 검증부터 확인한다.
 6. 원인이 확인되기 전까지 큰 수정을 하지 않는다.
-7. 가장 작은 수정으로 문제를 고친다.
-8. 원래 재현 절차와 인접 회귀 경로를 다시 검증한다.
-9. `Documentation.md`에 원인과 검증 결과를 남긴다.
+7. 수정 범위나 검증 방법이 바뀌면 `Implement.md`를 먼저 갱신한다.
+8. 가장 작은 수정으로 문제를 고친다.
+9. 원래 재현 절차와 인접 회귀 경로를 다시 검증한다.
+10. `Documentation.md`에 원인과 검증 결과를 남긴다.
 
 ## 출력 방식
 
@@ -58,9 +60,10 @@ description: Use when a bug is unclear, recurring, or expensive to guess at and 
 4. `관찰된 증거`
 5. `원인 가설`
 6. `검증 계획`
-7. `수정안`
-8. `검증 결과`
-9. `회귀 위험`
+7. `write path impact`
+8. `수정안`
+9. `검증 결과`
+10. `회귀 위험`
 
 ## 가드레일
 
@@ -68,4 +71,5 @@ description: Use when a bug is unclear, recurring, or expensive to guess at and 
 - 재현되지 않으면 먼저 관찰 가능성을 높인다.
 - 여러 가설이 있으면 가장 싸게 반증 가능한 것부터 본다.
 - 수정이 계획 범위를 벗어나면 `PIVOT_POLICY`를 다시 본다.
+- 수정으로 write path나 validation loop가 바뀌면 `Implement.md`를 같이 갱신한다.
 - 해결했더라도 왜 해결됐는지 설명할 수 없으면 종료로 보지 않는다.

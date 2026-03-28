@@ -51,7 +51,7 @@ flowchart TD
     F --> G["Scope Freeze"]
     G --> H["Main Writer<br/>구현 담당 1명"]
     H --> I["Review Gate<br/>review"]
-    I --> J["QA Gate<br/>qa 또는 browse"]
+    I --> J["Validation Gate<br/>validation 또는 qa/browse"]
     J --> K["Security Gate<br/>cso가 필요할 때만"]
     K --> L["Ship Gate<br/>ship"]
     L --> M["Documentation.md 갱신"]
@@ -69,10 +69,13 @@ flowchart TD
 
 - `planner-capable agent`: 아이디어 확장, 선택지 비교, 문제 재정의
 - `writer-capable agent`: 저장소 맥락 기반 구현, 수정, 검증
+- `validation-capable agent`: 테스트, API, CLI, runtime check
 - `PM planner`: 기획 정리, 범위 통제, readiness 판단
-- `gstack 스타일 게이트`: review, QA, browse, ship 같은 후반 품질 잠금
+- `gstack 스타일 게이트`: review, validation, QA, browse, ship 같은 후반 품질 잠금
 
 이렇게 나누면 같은 문제를 여러 도구가 중복해서 건드리는 일이 줄고, 각 도구를 가장 잘하는 일에 쓸 수 있습니다.
+
+아이디어를 다른 도구와 발산적으로 이야기할 수는 있지만, 최종 구현 기준 문서를 쓰는 `planner-of-record`는 하나로 고정하는 편이 좋습니다.
 
 ## 빠른 시작
 
@@ -138,7 +141,7 @@ workspace/
 5. `product-planner`로 첫 기획을 정리하면서 `Prompt.md`, `PRD.md`, `Plan.md`를 채운다.
 6. [docs/OVERSIGHT_POLICY.md](./docs/OVERSIGHT_POLICY.md)에 따라 이번 작업의 oversight plan을 선언한다.
 7. `scope freeze` 후 `Implement.md`의 sprint contract를 채우고 구현을 시작한다.
-8. 구현이 끝나면 `review`, `qa/browse`, `security if needed`, `ship` 순서로 게이트를 통과시킨다.
+8. 구현이 끝나면 `review`, `validation 또는 qa/browse`, `security if needed`, `ship if release-bound` 순서로 게이트를 통과시킨다.
 
 정말 짧게 줄이면 이렇다.
 
@@ -146,7 +149,7 @@ workspace/
 - 템플릿을 실제 작업 문서로 복사한다
 - planner로 기획을 고정한다
 - sprint contract를 적고 구현한다
-- review와 QA를 거쳐 마무리한다
+- review와 validation 또는 QA를 거쳐 마무리한다
 
 ## Bootstrap 복사 대상
 
@@ -199,7 +202,7 @@ workspace/
 
 ### 3. 평가자는 매 순간 끼어들지 않고 게이트에서만 작동한다
 
-planner나 reviewer가 매 대화 턴마다 들어오면 흐름이 끊깁니다. 반대로 아예 없으면 품질이 흔들립니다. 이 저장소는 그 중간이 아니라, 더 분명한 방식을 택합니다. `문제 정의`, `PRD`, `scope freeze`, `구현 후 review`, `QA`, `ship` 같은 산출물 단위에서만 평가를 수행합니다.
+planner나 reviewer가 매 대화 턴마다 들어오면 흐름이 끊깁니다. 반대로 아예 없으면 품질이 흔들립니다. 이 저장소는 그 중간이 아니라, 더 분명한 방식을 택합니다. `문제 정의`, `PRD`, `scope freeze`, `구현 후 review`, `validation 또는 QA`, `ship` 같은 산출물 단위에서만 평가를 수행합니다.
 
 ### 4. 긴 프로젝트에서 맥락 복구가 쉬워진다
 
@@ -239,9 +242,9 @@ flowchart LR
 3. `Prompt.md`, `PRD.md`, `Plan.md`를 고정한다.
 4. `Scope Freeze` 이후 메인 writer가 구현한다.
 5. 구현이 끝나면 `review`를 통과한다.
-6. 웹이나 UI가 있으면 `qa` 또는 `browse`로 실제 흐름을 검증한다.
+6. UI가 없으면 `validation`, UI가 있으면 `qa` 또는 `browse`로 실제 흐름을 검증한다.
 7. 민감 기능이면 `cso`로 보안 점검을 한다.
-8. `ship`으로 마무리하고 `Documentation.md`를 갱신한다.
+8. 릴리스 대상이면 `ship`으로 마무리하고 `Documentation.md`를 갱신한다.
 
 ## 누구에게 맞는가
 
@@ -266,7 +269,7 @@ flowchart LR
 - [AGENTS.md](./AGENTS.md): 저장소 전체 운영 헌법
 - [.agents/skills/product-planner/SKILL.md](./.agents/skills/product-planner/SKILL.md): PM-first 기획 정리
 - [.agents/skills/vibe-coding-workflow/SKILL.md](./.agents/skills/vibe-coding-workflow/SKILL.md): single-writer 구현 루프
-- [.agents/skills/gstack-gates/SKILL.md](./.agents/skills/gstack-gates/SKILL.md): review, QA, security, ship 게이트
+- [.agents/skills/gstack-gates/SKILL.md](./.agents/skills/gstack-gates/SKILL.md): review, validation, QA, security, ship 게이트
 - [.agents/skills/systematic-debugging/SKILL.md](./.agents/skills/systematic-debugging/SKILL.md): 원인 분석 우선 디버깅 루프
 - [templates](./templates): Prompt, PRD, Plan, Implement, Documentation, Manifest 템플릿
 - [docs](./docs): 운영 모델, artifact gate, subagent 정책, mode, oversight, pivot 정책, 도구 매핑, 레퍼런스 해석

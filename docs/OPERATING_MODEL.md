@@ -24,7 +24,7 @@ vibebuilder-framework는 에이전트를 많이 붙이는 시스템이 아니다
 | `.agents/skills/` | 반복 절차 | 같은 판단과 행동을 재사용하기 위해 |
 | `templates/` | 프로젝트 문서 출발점 | 매번 빈 문서에서 시작하지 않기 위해 |
 | `docs/` | 운영 원리와 게이트 기준 | skill이 읽을 수 있는 참조 문서를 두기 위해 |
-| `Subagent-Manifest.md` | 이번 프로젝트의 인력 배치표 | 역할과 write scope를 분명히 하기 위해 |
+| `Subagent-Manifest.md` | 이번 프로젝트의 인력 배치표 | 역할과 write scope를 분명히 해야 할 때 쓰기 위해 |
 
 ## 기본 흐름
 
@@ -48,6 +48,7 @@ flowchart TD
 - mode는 작업 크기와 리스크에 맞춘다.
 - 감독 렌즈는 작업마다 planner가 동적으로 고른다.
 - 구현 중 인사이트는 pivot 정책에 따라 흡수하거나 재계획한다.
+- UI가 없는 작업에는 `validation`을 기본 검증 게이트로 사용한다.
 
 ## 예외 처리
 
