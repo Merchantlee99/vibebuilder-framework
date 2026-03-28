@@ -1,6 +1,6 @@
 # vibebuilder-framework
 
-vibebuilder-framework는 PM-first planning, single-writer execution, dynamic oversight, and gated review를 중심으로 에이전트 기반 제품 개발을 운영하는 바이브코딩 프레임워크입니다.
+vibebuilder-framework는 혼자 제품을 만드는 빌더가 방향을 먼저 고정하고, 구현을 한 명이 책임지고, 마지막에 품질 게이트로 잠그게 만드는 PM-first 바이브코딩 프레임워크입니다.
 
 짧게 말하면 이 저장소는 "에이전트를 많이 쓰는 법"이 아니라 "언제 기획을 잠그고, 누가 구현을 맡고, 어떤 기준으로 검증할지"를 정리한 실전용 개발 프레임워크입니다.
 
@@ -15,6 +15,17 @@ vibebuilder-framework는 PM-first planning, single-writer execution, dynamic ove
 - 마지막 검토가 약해서 데모는 되는데 제품 품질은 흔들립니다.
 
 vibebuilder-framework는 이 문제를 줄이기 위해 만들었습니다. 목표는 속도를 죽이는 절차가 아니라, 재작업을 줄이고 결과물의 완성도를 올리는 구조를 만드는 것입니다.
+
+## 이 프레임워크의 고유한 기여
+
+이 저장소는 여러 레퍼런스를 참고했지만, 핵심 주장은 분명합니다.
+
+- `PM planner`를 선택 사항이 아니라 시작점으로 둡니다.
+- 모든 작업에 고정 매트릭스를 강제하지 않고 `dynamic oversight`를 선언합니다.
+- `scope freeze`와 `pivot policy`를 같이 둬서 실험과 통제를 동시에 잡습니다.
+- 구현은 `single writer`, 품질은 `후반 게이트`로 나눠 충돌과 누락을 줄입니다.
+
+즉, 이 프레임워크의 초점은 "에이전트를 더 많이 쓰는 것"이 아니라 "혼자 일할 때도 방향, 실행, 검수를 분리해 흔들림을 줄이는 것"입니다.
 
 ## 이 저장소가 택한 답
 
@@ -75,6 +86,7 @@ flowchart TD
 6. [docs/MODES.md](./docs/MODES.md)에서 작업 강도를 고른다.
 7. [docs/OVERSIGHT_POLICY.md](./docs/OVERSIGHT_POLICY.md)에서 이번 작업의 감독 계획을 정한다.
 8. [docs/PIVOT_POLICY.md](./docs/PIVOT_POLICY.md)에서 구현 중 변경을 어떻게 처리할지 확인한다.
+9. [docs/TOOL_MAPPING.md](./docs/TOOL_MAPPING.md)에서 도구별 역할 배치를 확인한다.
 
 ## 새 프로젝트에 어떻게 적용하나
 
@@ -255,8 +267,9 @@ flowchart LR
 - [.agents/skills/product-planner/SKILL.md](./.agents/skills/product-planner/SKILL.md): PM-first 기획 정리
 - [.agents/skills/vibe-coding-workflow/SKILL.md](./.agents/skills/vibe-coding-workflow/SKILL.md): single-writer 구현 루프
 - [.agents/skills/gstack-gates/SKILL.md](./.agents/skills/gstack-gates/SKILL.md): review, QA, security, ship 게이트
+- [.agents/skills/systematic-debugging/SKILL.md](./.agents/skills/systematic-debugging/SKILL.md): 원인 분석 우선 디버깅 루프
 - [templates](./templates): Prompt, PRD, Plan, Implement, Documentation, Manifest 템플릿
-- [docs](./docs): 운영 모델, artifact gate, subagent 정책, mode, oversight, pivot 정책, 레퍼런스 해석
+- [docs](./docs): 운영 모델, artifact gate, subagent 정책, mode, oversight, pivot 정책, 도구 매핑, 레퍼런스 해석
 - [examples](./examples): 실제로 채워진 샘플 프로젝트 문서 세트
 
 ## 예시
@@ -269,6 +282,7 @@ flowchart LR
 
 - [phuryn/pm-skills](https://github.com/phuryn/pm-skills): discovery, assumption mapping, PRD와 execution 구조화
 - [garrytan/gstack](https://github.com/garrytan/gstack): office-hours식 문제 재정의, CEO/eng/design review, review/qa/browse/ship 게이트
+- [obra/superpowers](https://github.com/obra/superpowers): skill 기반 실행 강제력, systematic debugging, implementation discipline
 - [agentsmd/agents.md](https://github.com/agentsmd/agents.md): 예측 가능한 전역 agent 지시 파일 패턴
 
 이 레퍼런스를 어떻게 해석했는지는 [docs/REFERENCE_ALIGNMENT.md](./docs/REFERENCE_ALIGNMENT.md)에 정리해두었습니다.
