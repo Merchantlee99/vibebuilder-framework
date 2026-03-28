@@ -103,6 +103,8 @@ flowchart TD
 
 즉, 사람과 에이전트가 같은 구조로 생각하게 만드는 쪽에 가깝습니다. 혼자 바이브코딩할 때는 처음부터 무거운 강제 시스템보다, `낮은 마찰로 계속 따를 수 있는 구조`가 더 현실적이라고 봤습니다.
 
+더 강한 자동 강제 방향은 [docs/HOOKS_DESIGN.md](./docs/HOOKS_DESIGN.md)에 별도 설계안으로 정리해두었습니다.
+
 ## 핵심 원칙
 
 - `PM-first`: 구현보다 먼저 문제 정의와 범위를 정리한다.
@@ -159,6 +161,7 @@ flowchart LR
 - [.agents/skills/](./.agents/skills): planner, implementation, review, debugging 같은 반복 절차
 - [templates](./templates): 새 프로젝트를 시작할 때 쓰는 문서 출발점
 - [docs](./docs): mode, oversight, pivot, gate, tool mapping 같은 운영 원리
+- [docs/HOOKS_DESIGN.md](./docs/HOOKS_DESIGN.md): Codex hooks로 soft harness를 더 강하게 만드는 설계안
 - `Subagent-Manifest.md`: 역할과 write scope를 문서화해야 할 때만 쓰는 선택 문서
 
 ## 도구 배치
@@ -241,7 +244,7 @@ flowchart LR
 - [.agents/skills/gstack-gates/SKILL.md](./.agents/skills/gstack-gates/SKILL.md): review, validation, QA, security, ship 게이트
 - [.agents/skills/systematic-debugging/SKILL.md](./.agents/skills/systematic-debugging/SKILL.md): 원인 분석 우선 디버깅 루프
 - [templates](./templates): Prompt, PRD, Plan, Implement, Documentation, Manifest 템플릿
-- [docs](./docs): 운영 모델, mode, oversight, pivot, gates, tool mapping, reference alignment
+- [docs](./docs): 운영 모델, mode, oversight, pivot, gates, tool mapping, hooks design, reference alignment
 - [examples](./examples): 실제로 채워진 샘플 프로젝트 문서 세트
 
 ## 한 문장 요약
