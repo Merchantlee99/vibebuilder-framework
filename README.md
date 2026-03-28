@@ -278,6 +278,7 @@ flowchart LR
 ## 예시
 
 - [examples/landing-page-redesign](./examples/landing-page-redesign): `solo-pro` mode로 planner, oversight, scope freeze, review, QA까지 한 번 보여주는 샘플
+- [examples/api-feature-rollout](./examples/api-feature-rollout): UI 없는 작업에서 planner, validation, release-bound 없는 종료까지 보여주는 샘플
 
 ## 레퍼런스와 해석
 
